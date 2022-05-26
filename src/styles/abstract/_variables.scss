@@ -1,0 +1,19 @@
+// Colors
+$color-dark-blue: hsl(209, 23%, 22%);
+$color-very-dark-blue: hsl(207, 26%, 17%);
+$color-black-pearl  : hsl(200, 15%, 8%);
+$color-dark-gray: hsl(0, 0%, 52%);
+$color-very-light-gray: hsl(0, 0%, 98%);
+$color-white: hsl(0, 0%, 100%);
+
+// - Azul oscuro (elementos del modo oscuro): hsl (209, 23 %, 22 %)
+// - Azul muy oscuro (fondo en modo oscuro): hsl (207, 26 %, 17 %)
+// - Azul muy oscuro (texto en modo claro): hsl (200, 15 %, 8 %)
+// - Gris oscuro (entrada de modo claro): hsl (0, 0%, 52%)
+// - Gris muy claro (fondo de modo claro): hsl (0, 0%, 98%)
+// - Blanco (texto en modo oscuro y elementos en modo claro): hsl (0, 0 %, 100 %)
+
+// media queries
+$mq-mobile: 375px;
+// $mq-tablet: 768px;
+$mq-desktop: 1440px;
