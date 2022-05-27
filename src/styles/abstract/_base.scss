@@ -19,3 +19,29 @@ html, body{
     max-width: 1100px;
     width: 90%;
 }
+
+// Tests
+.region-filter{
+    position: relative;
+}
+
+.regions{
+    position: absolute;
+    border: 1px solid gold;
+    width: 100%;
+    transition: all .3s ease-in-out;
+    &[data-visible="true"]{
+        transform: translateY(5rem);
+        // display: block;
+        
+        height: auto;
+    }
+    &[data-visible="false"]{
+        transform: translateY(0);
+        // display: none;
+        height: 0;
+    }
+    ul{
+        list-style: none;
+    }
+}
