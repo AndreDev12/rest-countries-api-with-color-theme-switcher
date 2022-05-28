@@ -1,0 +1,16 @@
+@use '../abstract/variables' as v;
+
+.main{
+    background-color: v.$color-very-light-gray;
+    padding-block: 2rem;
+    .flex{
+        display: flex;
+        flex-direction: column;
+        row-gap: 3rem;
+        .form{
+            box-shadow: 0 0 .3rem .3rem v.$color-box-shadow;
+            border-radius: .5rem;
+            background-color: v.$color-white;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+@use '../abstract/variables' as v;
+
+.header{
+    width: 100%;
+    .flex{
+        margin-block: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .title{
+            color: v.$color-black-pearl;
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+    }
+}
+
+.theme-switcher{
+    cursor: pointer;
+    border: 0;
+    background-color: v.$color-white;
+    display: flex;
+    column-gap: .5rem;
+    align-items: center;
+    font-size: 1.4rem;
+    color: v.$color-black-pearl;
+    .theme-name{
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+}

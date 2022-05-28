@@ -1,22 +1,13 @@
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
-import { useState } from 'react';
-
 const Main = () => {
-  const [show, setShow] = useState("false");
-  
-  function handleClick() {
-    if(show === "true"){
-      setShow("false")
-      return;
-    }
-    setShow("true");
-  }
+  const [show, setShow] = useState(false);
 
   return (
     <main className="main">
-      <div className="container grid">
+      <div className="container flex">
         <form className="form">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
           <input 
@@ -26,7 +17,7 @@ const Main = () => {
         </form>
         <button 
           className="region-filter"
-          onClick={handleClick}  
+          onClick={() => setShow(!show)}  
         >
           <span className="theme-name">Filter by region</span>
           <FontAwesomeIcon icon={faAngleDown} /> 
@@ -46,5 +37,3 @@ const Main = () => {
 }
 
 export default Main;
-
-// Nota: Testear "regions" debe ir dentro de "region-filter"

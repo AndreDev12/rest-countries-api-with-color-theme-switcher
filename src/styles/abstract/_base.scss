@@ -17,10 +17,10 @@ html, body{
 .container{
     margin: 0 auto; 
     max-width: 1100px;
-    width: 90%;
+    width: 95%;
 }
 
-// Tests
+// Test terminado
 .region-filter{
     position: relative;
 }
@@ -29,17 +29,15 @@ html, body{
     position: absolute;
     border: 1px solid gold;
     width: 100%;
-    transition: all .3s ease-in-out;
+    top: 0;
+    left: 0;
+    transition: all .5s ease-in-out;
+    transform: translateY(0);
+    opacity: 0;
+    // z-index: 10;
     &[data-visible="true"]{
-        transform: translateY(5rem);
-        // display: block;
-        
-        height: auto;
-    }
-    &[data-visible="false"]{
-        transform: translateY(0);
-        // display: none;
-        height: 0;
+        transform: translateY(4rem);    
+        opacity: 1;
     }
     ul{
         list-style: none;
