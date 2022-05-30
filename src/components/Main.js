@@ -13,6 +13,7 @@ const Main = () => {
           <input 
             type="text"
             placeholder="Search for a country..."
+            className="search-country"
           />
         </form>
         <button 

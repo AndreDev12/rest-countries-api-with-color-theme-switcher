@@ -11,6 +11,30 @@
             box-shadow: 0 0 .3rem .3rem v.$color-box-shadow;
             border-radius: .5rem;
             background-color: v.$color-white;
+            display: grid;
+            grid-template-columns: 20% 1fr;
+            width: 100%;
+            padding: 1rem;
         }
     }
+}
+
+.fa-magnifying-glass{
+    width: 100%;
+    // height: 100%;
+    // flex: 0 0 20%;
+    // height: ;
+    color: v.$color-dark-gray;
+    font-size: 1.5rem;
+    margin-block: auto;
+    // path{
+    //     font-size: .1rem;
+    // }
+}
+
+.search-country{
+    border: 0;
+    outline: none;
+    color: v.$color-dark-gray;
+    padding: .5rem;
 }
