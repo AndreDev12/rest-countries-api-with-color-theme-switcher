@@ -23,12 +23,12 @@ const Main = () => {
           <span className="theme-name">Filter by region</span>
           <FontAwesomeIcon icon={faAngleDown} /> 
           <div className="regions" data-visible={show}>
-            <ul>
-              <li>Africa</li>
-              <li>America</li>
-              <li>Asia</li>
-              <li>Europe</li>
-              <li>Oceania</li>
+            <ul className="region-list">
+              <li className="region">Africa</li>
+              <li className="region">America</li>
+              <li className="region">Asia</li>
+              <li className="region">Europe</li>
+              <li className="region">Oceania</li>
             </ul>
           </div>
         </button>

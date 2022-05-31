@@ -1,4 +1,5 @@
 @use '../abstract/variables' as v;
+@use '../abstract/mixins' as m;
 
 .main{
     background-color: v.$color-very-light-gray;
@@ -6,7 +7,11 @@
     .flex{
         display: flex;
         flex-direction: column;
-        row-gap: 3rem;
+        row-gap: 4rem;
+        @include m.desktop{
+            flex-direction: row;
+            justify-content: space-between;
+        }
         .form{
             box-shadow: 0 0 .3rem .3rem v.$color-box-shadow;
             border-radius: .5rem;
@@ -15,26 +20,106 @@
             grid-template-columns: 20% 1fr;
             width: 100%;
             padding: 1rem;
+            @include m.desktop{
+                flex-basis: 40%;
+                border-radius: 1rem;
+                grid-template-columns: 10% 1fr;
+                column-gap: 1rem;
+            }
         }
     }
 }
 
 .fa-magnifying-glass{
     width: 100%;
-    // height: 100%;
-    // flex: 0 0 20%;
-    // height: ;
     color: v.$color-dark-gray;
     font-size: 1.5rem;
     margin-block: auto;
-    // path{
-    //     font-size: .1rem;
-    // }
+    @include m.desktop{
+        font-size: 2rem;
+    }
 }
 
 .search-country{
     border: 0;
-    outline: none;
-    color: v.$color-dark-gray;
+    outline: none;  
+    color: v.$color-black-pearl;
     padding: .5rem;
+    @include m.desktop{
+        font-size: 1.5rem;
+    }
+}
+
+.region-filter{
+    width: 63%;
+    border: 0;
+    box-shadow: 0 0 .3rem .3rem v.$color-box-shadow;
+    background-color: v.$color-white;
+    padding: 1rem 2.5rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: v.$color-black-pearl;
+    border-radius: .5rem;
+    cursor: pointer;
+    @include m.desktop{
+        flex-basis: 15%;
+        border-radius: 1rem;
+    }
+    .theme-name{
+        font-weight: 600;
+        font-size: 1.4rem;
+        @include m.desktop{
+            font-size: 1.5rem;
+        }
+    }
+    .fa-angle-down{
+        font-size: 1.3rem;
+        @include m.desktop{
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.regions{
+    position: absolute;
+    background-color: v.$color-white;
+    padding: 1.5rem 2.5rem;
+    box-shadow: 0 0 .3rem .3rem v.$color-box-shadow;
+    border-radius: .5rem;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: all .5s ease-in-out;
+    transform: translateY(0);
+    opacity: 0;
+    // z-index: 10;
+    @include m.desktop{
+        border-radius: 1rem;
+    }
+    &[data-visible="true"]{
+        transform: translateY(4.5rem);    
+        opacity: 1;
+        @include m.desktop{
+            transform: translateY(5.5rem)
+        }
+    }
+    .region-list{
+        list-style: none;
+    }
+}
+
+.region{
+    text-align: left;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    @include m.desktop{
+        font-size: 1.5rem;
+    }
+}
+
+.region:nth-child(5){
+    margin-bottom: 0;
 }
