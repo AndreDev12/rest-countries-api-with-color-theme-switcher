@@ -7,31 +7,34 @@ const Main = () => {
 
   return (
     <main className="main">
-      <div className="container flex">
-        <form className="form">
-          <FontAwesomeIcon icon={faMagnifyingGlass} />
-          <input 
-            type="text"
-            placeholder="Search for a country..."
-            className="search-country"
-          />
-        </form>
-        <button 
-          className="region-filter"
-          onClick={() => setShow(!show)}  
-        >
-          <span className="theme-name">Filter by region</span>
-          <FontAwesomeIcon icon={faAngleDown} /> 
-          <div className="regions" data-visible={show}>
-            <ul className="region-list">
-              <li className="region">Africa</li>
-              <li className="region">America</li>
-              <li className="region">Asia</li>
-              <li className="region">Europe</li>
-              <li className="region">Oceania</li>
-            </ul>
-          </div>
-        </button>
+      <div className="container">
+        <div className="flex">
+          <form className="form">
+            <FontAwesomeIcon icon={faMagnifyingGlass} />
+            <input 
+              type="text"
+              placeholder="Search for a country..."
+              className="search-country"
+            />
+          </form>
+          <button 
+            className="region-filter"
+            onClick={() => setShow(!show)}  
+          >
+            <span className="theme-name">Filter by region</span>
+            <FontAwesomeIcon icon={faAngleDown} /> 
+            <div className="regions" data-visible={show}>
+              <ul className="region-list">
+                <li className="region">Africa</li>
+                <li className="region">America</li>
+                <li className="region">Asia</li>
+                <li className="region">Europe</li>
+                <li className="region">Oceania</li>
+              </ul>
+            </div>
+          </button>
+        </div>
+        {/* <div className="grid"></div> */}
       </div>
     </main>
   )
