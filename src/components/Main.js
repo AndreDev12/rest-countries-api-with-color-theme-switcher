@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import CountryList from './CountryList';
 
 const Main = () => {
   const [show, setShow] = useState(false);
@@ -35,6 +36,7 @@ const Main = () => {
           </button>
         </div>
         {/* <div className="grid"></div> */}
+        <CountryList />
       </div>
     </main>
   )
