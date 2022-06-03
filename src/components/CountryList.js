@@ -1,4 +1,4 @@
-import useFetch from "../hooks/useFetch";
+import useFetch from '../hooks/useFetch';
 
 const CountryList = () => {
   const data = useFetch();
@@ -8,22 +8,22 @@ const CountryList = () => {
     <div className="content">
     {
       data.map( country => ( 
-        <div 
+        <a 
           className="country"
-          key={country.population}
+          key={country.name.common}
         >
           <figure>
-            <img src={country.flags.png} alt={country.flags.png}/>
+            <img src={country.flags.png} alt={country.name.common}/>
           </figure>
           <div className="country-information">
             <h2 className="country-name">{country.name.common}</h2>
-            <div>
-              <p>Population: <span>{country.population}</span></p>
-              <p>Region: <span>{country.region}</span></p>
-              <p>Capital: <span>{country.capital?country.capital[0]:''}</span></p>
-            </div>
+            <ul>
+              <li>Population: <span>{country.population}</span></li>
+              <li>Region: <span>{country.region}</span></li>
+              <li>Capital: <span>{country.capital&&country.capital[0]}</span></li>
+            </ul>
           </div>
-        </div>
+        </a>
       ))
     }
     </div>
