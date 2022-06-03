@@ -1,23 +1,27 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const useFetch = () => {
-    let response;
-    useEffect(() => {
-        async function getUser() {
-            try {
-              response = await axios.get('https://restcountries.com/v3.1/all');
-              const result = await response.data;
-              console.log(result);
-            } catch (error) {
-              console.error(error);
-            //   console.log(new Error());
-            }
-        }
-        getUser();
-    }, [])
 
-    return response;
+  const [state, setState] = useState([]);
+
+  useEffect(() => {
+    getUser();
+  }, [])
+
+  const getUser = async() => {
+    try{
+      const response = await axios.get('https://restcountries.com/v3.1/all');
+      const result = await response.data;
+      setState(result)
+      // console.log(result);
+    }catch(error){
+      console.error(error);
+      //   console.log(new Error());
+    }
+  }
+
+  return state;
 }
 
 export default useFetch;
