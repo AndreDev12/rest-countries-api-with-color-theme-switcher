@@ -1,0 +1,23 @@
+@use '../abstract/variables' as v;
+
+.country{
+    // width: 100%;
+    .link{
+        // width: 100%;
+        border: 0;
+        .flag{
+            display: block;
+            max-width: 100%;
+        }
+    }
+}
+
+.information{
+    background-color: v.$color-white;
+    padding: 1rem;
+    .name{
+        color: v.$color-black-pearl;
+        font-size: 1.6rem;
+        font-weight: 900;
+    }
+}

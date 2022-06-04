@@ -35,7 +35,6 @@ const Main = () => {
             </div>
           </button>
         </div>
-        {/* <div className="grid"></div> */}
         <CountryList />
       </div>
     </main>
