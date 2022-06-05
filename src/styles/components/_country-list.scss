@@ -1,7 +1,16 @@
+@use '../abstract/mixins' as m;
+
 .content{
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: fit-content(100%);
     row-gap: 4rem;
     margin-top: 4rem;
     padding-inline: 4.5rem;
+    justify-content: center;
+    @include m.desktop{
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 6rem;
+        padding-inline: 0;
+        row-gap: 6rem;
+    }
 }
