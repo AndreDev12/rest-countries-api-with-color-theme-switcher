@@ -11,7 +11,7 @@ const CountryList = () => {
       data.map( country => ( 
         <CountryListItem 
           country={ country }
-          key={ country.name.common }
+          key={ country.name }
         />
       ))
     }

@@ -11,7 +11,7 @@ const useFetch = () => {
 
   const getUser = async() => {
     try{
-      const response = await axios.get('https://restcountries.com/v3.1/all');
+      const response = await axios.get('https://restcountries.com/v2/all');
       const result = await response.data;
       setState(result)
       // console.log(result);

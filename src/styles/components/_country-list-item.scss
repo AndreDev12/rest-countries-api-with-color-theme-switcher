@@ -26,11 +26,7 @@
         font-size: 1.8rem;
         font-weight: 800;
         @include m.desktop{
-            // font-size: 1.3rem;
-            // height: 4.8rem;
-            line-height: 1;
-            // display: flex;
-            // align-items: center;
+            font-size: 2rem;
         }
     }
     .features{
@@ -44,6 +40,9 @@
     color: v.$color-black-pearl;
     font-weight: 600;
     margin-bottom: .5rem;
+    @include m.desktop{
+        font-size: 1.5rem;
+    }
     .span{
         color: v.$color-dark-gray;
     }
