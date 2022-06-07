@@ -5,6 +5,19 @@ import CountryList from './CountryList';
 
 const Main = () => {
   const [show, setShow] = useState(false);
+  const [first, setFirst] = useState({
+    country: ""
+  });
+
+  const handleClick = (e) => {
+    setFirst({
+      country: e.target.value
+    })
+    // console.log(e.target.value);
+  }
+
+  const {country} = first;
+  // https://restcountries.com/v2/name/{country}
 
   return (
     <main className="main">
@@ -16,6 +29,9 @@ const Main = () => {
               type="text"
               placeholder="Search for a country..."
               className="search-country"
+              name="country"
+              onChange={handleClick}
+              value={country}
             />
           </form>
           <button 
