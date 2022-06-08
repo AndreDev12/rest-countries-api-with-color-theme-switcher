@@ -1,9 +1,6 @@
-import useFetch from '../hooks/useFetch';
 import CountryListItem from './CountryListItem';
 
-const CountryList = () => {
-  const data = useFetch();
-  console.log(data);
+const CountryList = ({data, state}) => {
 
   return (
     <div className="content">

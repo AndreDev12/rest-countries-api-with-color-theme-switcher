@@ -8,12 +8,18 @@ const useFetch = () => {
   useEffect(() => {
     getUser();
   }, [])
+  let result;
 
   const getUser = async() => {
     try{
-      const response = await axios.get('https://restcountries.com/v2/all');
-      const result = await response.data;
-      setState(result)
+      const url = "https://restcountries.com/v2/all";
+      const response = await axios.get(url);
+      result = await response.data;
+      setState(result);
+      // setState({
+      //   data: result,
+      //   loading: true
+      // })
       // console.log(result);
     }catch(error){
       console.error(error);
@@ -21,7 +27,9 @@ const useFetch = () => {
     }
   }
 
-  return state;
+  return result;
 }
 
 export default useFetch;
+// https://restcountries.com/v2/name/{name}
+// https://restcountries.com/v2/all
