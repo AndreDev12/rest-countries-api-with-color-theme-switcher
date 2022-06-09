@@ -1,13 +1,12 @@
-function reducer(state, action){
-    switch (action.type) {
-        case 'search_country': {
-            // console.log('Búsqueda de país');
-            console.log([{country: "aNDORRA"}])
-        }
+// function reducer(state, action){
+//     switch (action.type) {
+//         case 'search_country': {
+//             console.log(state);
+//         }
 
-        default:
-            return state
-    }
-}
+//         default:
+//             return state
+//     }
+// }
 
-export default reducer;
+// export default reducer;

@@ -1,11 +1,11 @@
 import CountryListItem from './CountryListItem';
 
-const CountryList = ({data, state}) => {
-
+const CountryList = ({ data, first }) => {
+  // console.log(data);
   return (
     <div className="content">
     {
-      data.map( country => ( 
+      first.map( country => ( 
         <CountryListItem 
           country={ country }
           key={ country.name }
