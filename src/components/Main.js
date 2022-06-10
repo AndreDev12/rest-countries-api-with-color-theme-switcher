@@ -1,44 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import CountryList from './CountryList';
 import useFetch from '../hooks/useFetch';
-import axios from 'axios';
 
 const Main = () => {
   const [show, setShow] = useState(false);
-  const [input, setInput] = useState({
-    country: ""
-  });
-  const [first, setFirst] = useState([]);
 
-  const handleChange = (e) => {
-    setInput({
-      country: e.target.value
-    });
-  }
-
-  const { country } = input;
-
-  useEffect(() => {
-   
-    const getUser = async() => {
-      try{
-        if(country){
-          const url = `https://restcountries.com/v2/name/${country}`;
-          const response = await axios.get(url);
-          const result = await response.data;
-          setFirst(result);
-        }
-      }catch(error){
-        console.error(error);
-      }
-    }
-    getUser();
-  }, [input])
-
-  const data = useFetch();
-
+  const {state, handleChange, country} = useFetch();
 
   return (
     <main className="main">
@@ -50,9 +19,9 @@ const Main = () => {
               type="text"
               placeholder="Search for a country..."
               className="search-country"
+              autoComplete="off"
               name="country"
               onChange={handleChange}
-              autoComplete="off"
               value={country}
             />
           </form>
@@ -74,8 +43,7 @@ const Main = () => {
           </button>
         </div>
         <CountryList 
-          data={ data }
-          first={ first }
+          state={state}
         />
       </div>
     </main>
