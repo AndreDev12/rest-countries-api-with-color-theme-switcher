@@ -1,6 +1,6 @@
 import CountryListItem from './CountryListItem';
 
-const CountryList = ({ state}) => {
+const CountryList = ({state}) => {
   console.log(state);
   return (
     <div className="content">
