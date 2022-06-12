@@ -1,17 +1,18 @@
 import Header from './components/Header';
-import Main from './components/Main';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from './components/Home';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import Countries from './components/Countries';
+import CountryDetail from './components/CountryDetail';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/countries" element={<Countries />} />
+          <Route path="/countries/:countryId" element={<CountryDetail />} />
+          <Route path="*" element={<Navigate to="/countries" />} />
       </Routes>
-      <Main />
-    </BrowserRouter>
+    </Router>
   );
 }
 

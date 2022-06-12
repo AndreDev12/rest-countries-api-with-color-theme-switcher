@@ -1,6 +1,9 @@
+import { Link } from 'react-router-dom';
+
 const CountryListItem = ({ country }) => {
   return (
-    <div 
+    <Link 
+        to={`/countries/${country.name}`}
         className="country"
     >
         <button className="link">
@@ -18,8 +21,11 @@ const CountryListItem = ({ country }) => {
               <li className="feature">Capital: <span className="span">{country.capital}</span></li>
             </ul>
         </div>
-    </div>
+    </Link>
   )
 }
 
 export default CountryListItem;
+
+// *Note:
+// Componente Link por etiqueta div

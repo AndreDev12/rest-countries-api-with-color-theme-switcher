@@ -4,7 +4,7 @@ import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icon
 import CountryList from './CountryList';
 import useFetch from '../hooks/useFetch';
 
-const Home = () => {
+const Countries = () => {
   const [show, setShow] = useState(false);
   const {state, handleChange, country} = useFetch();
 
@@ -49,4 +49,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Countries;
