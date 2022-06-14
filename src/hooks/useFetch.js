@@ -4,10 +4,10 @@ import axios from 'axios';
 const useFetch = () => {
 
   const [state, setState] = useState([]);
-  const [input, setInputCountry] = useState({
+  const [inputCountry, setInputCountry] = useState({
     country: ""
   });
-  const { country } = input;
+  const { country } = inputCountry;
 
   useEffect(() => {
     const getCountries = async() => {
