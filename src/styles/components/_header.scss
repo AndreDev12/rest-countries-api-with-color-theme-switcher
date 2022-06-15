@@ -5,13 +5,14 @@
     width: 100%;
     padding-block: 2.5rem;
     box-shadow: 0 0 .3rem .3rem v.$color-box-shadow;
+    height: 7rem;
     .flex{
         display: flex;
         justify-content: space-between;
         align-items: center;
         .title{
             color: v.$color-black-pearl;
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             font-weight: 800;
             @include m.desktop{
                 font-size: 2.5rem;

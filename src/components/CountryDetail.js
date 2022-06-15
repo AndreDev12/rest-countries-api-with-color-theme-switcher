@@ -45,7 +45,7 @@ const CountryDetail = () => {
                   </ul>
                 </div>
                 <div className="border-countries">
-                  <span className="span">border countries</span>
+                  <span className="span">border countries:</span>
                   <div className="borders">
                     {
                       borders?.map((border, index) => (
