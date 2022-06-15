@@ -1,7 +1,7 @@
 @use '../abstract/variables' as v;
 @use '../abstract/mixins' as m;
 
-.country{
+.home-country{
     display: flex;
     flex-direction: column;
     height: 37rem;
@@ -24,7 +24,7 @@
     background-color: v.$color-white;
     padding: 3rem;
     height: 18.5rem;
-    .name{
+    .home-country-name{
         color: v.$color-black-pearl;
         font-size: 1.8rem;
         font-weight: 800;
@@ -32,13 +32,13 @@
             font-size: 2rem;
         }
     }
-    .features{
+    .home-features{
         list-style: none;
         margin-top: 1.5rem;
     }
 }
 
-.feature{
+.home-feature{
     font-size: 1.4rem;
     color: v.$color-black-pearl;
     font-weight: 600;
