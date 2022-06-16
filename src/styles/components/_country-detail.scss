@@ -7,14 +7,13 @@
     background-color: v.$color-very-light-gray;
     padding-top: 3rem;
     padding-bottom: 2.4rem;
-    overflow-y: hidden;
     @include m.desktop{
         height: 92.1vh;
+        padding-top: 6rem;
     }
     .container{
         margin: 0 auto;
         width: 85%;
-        /* max-width: 1500px; */
         @include m.desktop{
             width: 92%;
         }
@@ -49,14 +48,28 @@
     margin: 0 auto;
     margin-top: 6rem;
     row-gap: 4rem;
+    @include m.desktop{
+        grid-template-rows: 40rem;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 6rem;
+    }
     .flag{
         width: 100%;
         max-width: 50rem;
         height: 100%;
         margin: 0 auto;
+        @include m.desktop{
+            max-width: 60rem;
+            margin: 0;
+        }
     }
     .data{
         width: 100%;
+        max-width: 50rem;
+        margin: 0 auto;
+        @include m.desktop{
+            max-width: unset;
+        }
     }
 }
 
@@ -64,6 +77,10 @@
     font-size: 2rem;
     color: v.$color-black-pearl;
     font-weight: 800;
+    @include m.desktop{
+        margin-top: 4rem;
+        font-size: 3rem;
+    }
 }
 
 .details-features{
@@ -73,15 +90,22 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, auto);
     row-gap: 4rem;
+    @include m.desktop{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+    }
     .primary{
         list-style: none;
         .details-feature{
-            margin-bottom: 1rem;
             text-transform: capitalize;
             font-size: 1.4rem;
             color: hsl(200deg, 15%, 8%);
             font-weight: 600;
             margin-bottom: 0.5rem;
+            @include m.desktop{
+                margin-bottom: 1rem;
+                font-size: 1.6rem;
+            }
         }
     }
 }
@@ -106,6 +130,10 @@
         &:last-of-type{
             margin-bottom: 0;
         }
+        @include m.desktop{
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+        }
     }
 }
 
@@ -118,10 +146,28 @@
     display: flex;
     flex-direction: column;
     row-gap: 2rem;
+    @include m.desktop{
+        margin-top: 7rem;
+        flex-direction: row;
+        column-gap: 2rem;
+        align-items: center;
+    }
     .span{
         color: v.$color-black-pearl;
         font-size: 1.6rem;
         font-weight: 800;
         text-transform: capitalize;
     }
+    .borders{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
+
+.border{
+    padding: .5rem 3.5rem;
+    box-shadow: 0 0 .3rem .3rem v.$color-box-shadow;
+    font-size: 1.4rem;
+    text-decoration: none;
 }

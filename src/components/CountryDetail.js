@@ -44,20 +44,27 @@ const CountryDetail = () => {
                     <li className="details-feature">languages: <span className="span">{languages.map( language => ( language.name )).join(', ')}</span></li>
                   </ul>
                 </div>
-                <div className="border-countries">
-                  <span className="span">border countries:</span>
-                  <div className="borders">
-                    {
-                      borders?.map((border, index) => (
-                        <Link 
-                          className="border"
-                          key={index}
-                          to={`/countries/${countryId}`}
-                        >{border}</Link>
-                      ))
-                    }
-                  </div>
-                </div>
+                {
+                  borders && (
+                    <div className="border-countries">
+                      <span className="span">border countries:</span>
+                      <div className="borders">
+                        {
+                          borders?.map((border, index) => (
+                            <Link 
+                              className="border"
+                              key={index}
+                              to={`/countries`}
+                              // to={`/countries/${countryId}`}
+                              // to={`/countries/${children}`}
+                              // children={children}
+                            >{border}</Link>
+                          ))
+                        }
+                      </div>
+                    </div>
+                  )
+                }
               </div>
             </div>
         </div>
