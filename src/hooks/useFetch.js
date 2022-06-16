@@ -45,10 +45,15 @@ const useFetch = () => {
     });
   }
 
+  const handleClick = (e) => {
+    console.log(e.target.value);
+  }
+
   return {
     state,
     handleChange,
-    country
+    country,
+    handleClick
   };
 }
 
