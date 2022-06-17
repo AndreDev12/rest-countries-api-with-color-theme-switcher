@@ -1,7 +1,7 @@
-import { Link, useNavigate, useParams } from "react-router-dom";
-import useFetch from "../hooks/useFetch";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeftLong } from "@fortawesome/free-solid-svg-icons";
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import useFetch from '../hooks/useFetch';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 
 const CountryDetail = () => {
   const navigate = useNavigate();

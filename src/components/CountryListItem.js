@@ -26,6 +26,3 @@ const CountryListItem = ({ country }) => {
 }
 
 export default CountryListItem;
-
-// *Note:
-// Componente Link por etiqueta div

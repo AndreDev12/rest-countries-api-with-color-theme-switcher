@@ -7,6 +7,7 @@ const useFetch = () => {
   const [inputCountry, setInputCountry] = useState({
     country: ""
   });
+  const [region, setRegion] = useState("");
   const { country } = inputCountry;
 
   useEffect(() => {
@@ -16,8 +17,8 @@ const useFetch = () => {
         const response = await axios.get(url);
         const result = await response.data;
         setState(result);
-      }catch(error){
-        console.error(error);
+      }catch(e){
+        console.error(e);
       }
     }
     getCountries();
@@ -39,14 +40,37 @@ const useFetch = () => {
     getCountry();
   }, [country])
 
-  const handleChange = (e) => {
+  useEffect(() => {
+    const getRegion = async() => {
+      try{
+        if(region === "all"){
+          const url = "https://restcountries.com/v2/all";
+          const response = await axios.get(url);
+          const result = await response.data;
+          setState(result);
+          return;
+        }
+        if(region){
+          const url = `https://restcountries.com/v2/region/${region}`;
+          const response = await axios.get(url);
+          const result = await response.data;
+          setState(result);
+        }
+      }catch(e){
+        console.error(e);
+      }
+    }
+    getRegion();
+  }, [region])
+  
+  const handleChange = ({target}) => {
     setInputCountry({
-      country: e.target.value
+      country: target.value
     });
   }
 
-  const handleClick = (e) => {
-    console.log(e.target.value);
+  const handleClick = name => {
+    setRegion(name);
   }
 
   return {

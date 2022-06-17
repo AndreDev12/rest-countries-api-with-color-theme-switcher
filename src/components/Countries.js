@@ -8,6 +8,15 @@ const Countries = () => {
   const [show, setShow] = useState(false);
   const {state, handleChange, country, handleClick} = useFetch();
 
+  const regions = [
+    {label: "All", name: "all"},
+    {label: "Africa", name: "africa"},
+    {label: "Americas", name: "americas"},
+    {label: "Asia", name: "asia"},
+    {label: "Europe", name: "europe"},
+    {label: "Oceania", name: "oceania"}
+  ];
+
   return (
     <main className="main">
       <div className="container">
@@ -30,18 +39,25 @@ const Countries = () => {
           >
             <span className="theme-name">Filter by region</span>
             <FontAwesomeIcon icon={faAngleDown} /> 
-            <div className="regions" data-visible={show}>
-              <ul 
-                className="region-list"
-                onClick={handleClick}
-              >
-                <li onClick={handleClick} name="region" className="region">Africa</li>
-                <li name="region" className="region">America</li>
-                <li name="region" className="region">Asia</li>
-                <li name="region" className="region">Europe</li>
-                <li name="region" className="region">Oceania</li>
-              </ul>
-            </div>
+            {
+              show && 
+              <div className="regions" data-visible={show}>
+                <ul 
+                  className="region-list"
+                >
+                  {
+                    regions.map( region => (
+                      <li
+                        onClick={() => handleClick(region.name)}
+                        className="region"
+                        key={region.label}
+                        value={region.name}
+                      >{region.label}</li>
+                    ))
+                  }
+                </ul>
+              </div> 
+            }
           </button>
         </div>
         <CountryList 
