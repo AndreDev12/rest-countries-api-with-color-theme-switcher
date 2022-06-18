@@ -6,7 +6,7 @@ import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 const CountryDetail = () => {
   const navigate = useNavigate();
   const { countryId } = useParams();
-  const { state } = useFetch();
+  const { state, handleCode, country, first } = useFetch();
 
   if(!state.length) return;
   let result = state.filter(country => country.name === countryId)[0];
@@ -49,13 +49,14 @@ const CountryDetail = () => {
                     <div className="border-countries">
                       <span className="span">border countries:</span>
                       <div className="borders">
-                        {
+                        { 
                           borders?.map((border, index) => (
                             <Link 
                               className="border"
                               key={index}
-                              to={`/countries`}
-                              // to={`/countries/${countryId}`}
+                              onClick={() => handleCode(border)}
+                              // to={`/countries`}
+                              to={`/countries/${first}`}
                               // to={`/countries/${children}`}
                               // children={children}
                             >{border}</Link>

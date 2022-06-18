@@ -8,10 +8,12 @@ const useFetch = () => {
     country: ""
   });
   const [region, setRegion] = useState("");
+  const [code, setCode] = useState("");
   const { country } = inputCountry;
+  const [first, setFirst] = useState("");
 
   useEffect(() => {
-    const getCountries = async() => {
+    const searchCountries = async() => {
       try{
         const url = "https://restcountries.com/v2/all";
         const response = await axios.get(url);
@@ -21,11 +23,11 @@ const useFetch = () => {
         console.error(e);
       }
     }
-    getCountries();
+    searchCountries();
   }, [])
 
   useEffect(() => {
-    const getCountry = async() => {
+    const searchCountryName = async() => {
       try{
         if(country){
           const url = `https://restcountries.com/v2/name/${country}`;
@@ -37,11 +39,11 @@ const useFetch = () => {
         console.error(e);
       }
     }
-    getCountry();
+    searchCountryName();
   }, [country])
 
   useEffect(() => {
-    const getRegion = async() => {
+    const searchRegion = async() => {
       try{
         if(region === "all"){
           const url = "https://restcountries.com/v2/all";
@@ -60,8 +62,29 @@ const useFetch = () => {
         console.error(e);
       }
     }
-    getRegion();
+    searchRegion();
   }, [region])
+
+  useEffect(() => {
+    const searchByCountryCode = async() => {
+      try {
+        if(code){
+          const url = `https://restcountries.com/v2/alpha/${code}`;
+          const response = await axios.get(url);
+          const result= await response.data;
+          // setState(result);
+          // console.log(name);
+          // setInputCountry(name);
+          // console.log(result);
+          setFirst(result.name);
+          console.log(result.name);
+        }
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    searchByCountryCode();
+  }, [code])
   
   const handleChange = ({target}) => {
     setInputCountry({
@@ -73,11 +96,17 @@ const useFetch = () => {
     setRegion(name);
   }
 
+  const handleCode = (border) => {
+    setCode(border)
+  }
+
   return {
     state,
-    handleChange,
     country,
-    handleClick
+    handleChange,
+    handleClick,
+    handleCode, 
+    first
   };
 }
 
