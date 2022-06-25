@@ -1,11 +1,12 @@
 import CountryListItem from './CountryListItem';
 
-const CountryList = ({state}) => {
+const CountryList = ({data, loading}) => {
   // console.log(state);
   return (
-    <div className="content">
+    <div className={loading ? "content-block" : "content-grid"}>
     {
-      state.map( country => ( 
+      loading ? <p className="loading-countries">Loading countries ...</p> :
+      data?.map( country => ( 
         <CountryListItem 
           country={ country }
           key={ country.name }

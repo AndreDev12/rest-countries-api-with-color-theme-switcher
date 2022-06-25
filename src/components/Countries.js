@@ -6,7 +6,7 @@ import useFetch from '../hooks/useFetch';
 
 const Countries = () => {
   const [show, setShow] = useState(false);
-  const {state, handleChange, country, handleClick} = useFetch();
+  const {data, loading, handleChange, country, handleClick} = useFetch();
 
   const regions = [
     {label: "All", name: "all"},
@@ -61,7 +61,8 @@ const Countries = () => {
           </button>
         </div>
         <CountryList 
-          state={state}
+          data={data}
+          loading={loading}
         />
       </div>
     </main>

@@ -3,28 +3,38 @@ import axios from 'axios';
 
 const useFetch = () => {
 
-  const [state, setState] = useState([]);
+  const [state, setState] = useState({
+    data: [],
+    loading: false,
+    error: false
+  });
+  const { data, loading, error, message } = state;
   const [inputCountry, setInputCountry] = useState({
     country: ""
   });
   const [region, setRegion] = useState("");
-  const [code, setCode] = useState("");
   const { country } = inputCountry;
-  const [first, setFirst] = useState("");
 
   useEffect(() => {
     const searchCountries = async() => {
       try{
+        setState({
+          ...state,
+          loading: true
+        })
         const url = "https://restcountries.com/v2/all";
         const response = await axios.get(url);
-        const result = await response.data;
-        setState(result);
+        const data = await response.data;
+        setState({
+          ...state,
+          data
+        })
       }catch(e){
         console.error(e);
       }
     }
     searchCountries();
-  }, [])
+  }, [state])
 
   useEffect(() => {
     const searchCountryName = async() => {
@@ -32,15 +42,23 @@ const useFetch = () => {
         if(country){
           const url = `https://restcountries.com/v2/name/${country}`;
           const response = await axios.get(url);
-          const result = await response.data;
-          setState(result);
+          const data = await response.data;
+          setState({
+            ...state,
+            data
+          });
         }
-      }catch(e){
-        console.error(e);
+      }catch(error){
+        console.error(error);  
+        setState({
+          data: [],
+          error: true,
+          loading: false
+        })
       }
     }
     searchCountryName();
-  }, [country])
+  }, [country, state])
 
   useEffect(() => {
     const searchRegion = async() => {
@@ -64,27 +82,6 @@ const useFetch = () => {
     }
     searchRegion();
   }, [region])
-
-  useEffect(() => {
-    const searchByCountryCode = async() => {
-      try {
-        if(code){
-          const url = `https://restcountries.com/v2/alpha/${code}`;
-          const response = await axios.get(url);
-          const result= await response.data;
-          // setState(result);
-          // console.log(name);
-          // setInputCountry(name);
-          // console.log(result);
-          setFirst(result.name);
-          console.log(result.name);
-        }
-      } catch (e) {
-        console.error(e);
-      }
-    }
-    searchByCountryCode();
-  }, [code])
   
   const handleChange = ({target}) => {
     setInputCountry({
@@ -96,17 +93,14 @@ const useFetch = () => {
     setRegion(name);
   }
 
-  const handleCode = (border) => {
-    setCode(border)
-  }
-
   return {
-    state,
+    data,
+    loading,
+    error,
+    message,
     country,
     handleChange,
-    handleClick,
-    handleCode, 
-    first
+    handleClick
   };
 }
 
