@@ -8,7 +8,7 @@ const useFetch = () => {
     loading: false,
     error: false
   });
-  const { data, loading, error, message } = state;
+  const { data, loading, error } = state;
   const [inputCountry, setInputCountry] = useState({
     country: ""
   });
@@ -34,7 +34,8 @@ const useFetch = () => {
       }
     }
     searchCountries();
-  }, [state])
+    // eslint-disable-next-line
+  }, [])
 
   useEffect(() => {
     const searchCountryName = async() => {
@@ -50,11 +51,11 @@ const useFetch = () => {
         }
       }catch(error){
         console.error(error);  
-        setState({
-          data: [],
-          error: true,
-          loading: false
-        })
+        // setState({
+        //   data: [],
+        //   error: true,
+        //   loading: false
+        // })
       }
     }
     searchCountryName();
@@ -97,7 +98,6 @@ const useFetch = () => {
     data,
     loading,
     error,
-    message,
     country,
     handleChange,
     handleClick
