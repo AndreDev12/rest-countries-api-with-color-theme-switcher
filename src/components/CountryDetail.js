@@ -1,12 +1,12 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import useFetch from '../hooks/useFetch';
+import useAxios from '../hooks/useAxios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 
 const CountryDetail = () => {
   const navigate = useNavigate();
   const { countryId } = useParams();
-  const { data } = useFetch();
+  const { data } = useAxios();
 
   if(!data.length) return;
   let result = data.filter(country => country.name === countryId)[0];

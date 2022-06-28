@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import CountryList from './CountryList';
-import useFetch from '../hooks/useFetch';
+import useAxios from '../hooks/useAxios';
 
 const Countries = () => {
   const [show, setShow] = useState(false);
-  const {data, loading, handleChange, country, handleClick} = useFetch();
+  const {data, loading, handleChange, country, handleClick} = useAxios();
 
   const regions = [
     {label: "All", name: "all"},

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const useFetch = () => {
+const useAxios = () => {
 
   const [state, setState] = useState({
     data: [],
@@ -49,13 +49,8 @@ const useFetch = () => {
             data
           });
         }
-      }catch(error){
-        console.error(error);  
-        // setState({
-        //   data: [],
-        //   error: true,
-        //   loading: false
-        // })
+      }catch(e){
+
       }
     }
     searchCountryName();
@@ -67,15 +62,21 @@ const useFetch = () => {
         if(region === "all"){
           const url = "https://restcountries.com/v2/all";
           const response = await axios.get(url);
-          const result = await response.data;
-          setState(result);
+          const data = await response.data;
+          setState({
+            ...state,
+            data
+          });
           return;
         }
         if(region){
           const url = `https://restcountries.com/v2/region/${region}`;
           const response = await axios.get(url);
-          const result = await response.data;
-          setState(result);
+          const data = await response.data;
+          setState({
+            ...state,
+            data
+          });
         }
       }catch(e){
         console.error(e);
@@ -104,4 +105,4 @@ const useFetch = () => {
   };
 }
 
-export default useFetch;
+export default useAxios;
