@@ -83,7 +83,7 @@ const useAxios = () => {
       }
     }
     searchRegion();
-  }, [region])
+  }, [region, state])
   
   const handleChange = ({target}) => {
     setInputCountry({

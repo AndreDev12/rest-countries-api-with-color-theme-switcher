@@ -38,3 +38,32 @@
         font-weight: 600;
     }
 }
+
+#light.header{
+    background-color: v.$color-white;
+}
+
+#dark.header{
+    background-color: v.$color-dark-blue;
+}
+
+#light .title{
+    color: v.$color-black-pearl;
+}
+
+#dark .title{
+    color: v.$color-white;
+}
+
+#light .theme-switcher{
+    background-color: v.$color-white;
+}
+
+#dark .theme-switcher{
+    background-color: v.$color-dark-blue;
+    color: v.$color-white;
+}
+
+#dark .moon{
+    background-color: v.$color-white; 
+}

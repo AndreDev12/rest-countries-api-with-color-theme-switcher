@@ -4,7 +4,7 @@ import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icon
 import CountryList from './CountryList';
 import useAxios from '../hooks/useAxios';
 
-const Countries = () => {
+const Main = () => {
   const [show, setShow] = useState(false);
   const {data, loading, handleChange, country, handleClick} = useAxios();
 
@@ -69,4 +69,4 @@ const Countries = () => {
   )
 }
 
-export default Countries;
+export default Main;
