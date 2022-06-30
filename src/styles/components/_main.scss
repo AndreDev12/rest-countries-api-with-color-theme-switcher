@@ -14,7 +14,7 @@
             justify-content: space-between;
         }
         .form{
-            box-shadow: 0 0 .3rem .3rem v.$color-box-shadow;
+            box-shadow: 0 0 .3rem .3rem v.$color-light-mode-box-shadow;
             border-radius: .5rem;
             background-color: v.$color-white;
             display: grid;
@@ -54,7 +54,7 @@
 .region-filter{
     width: 63%;
     border: 0;
-    box-shadow: 0 0 .3rem .3rem v.$color-box-shadow;
+    box-shadow: 0 0 .3rem .3rem v.$color-light-mode-box-shadow;
     background-color: v.$color-white;
     padding: 1rem 2.5rem;
     position: relative;
@@ -87,7 +87,7 @@
     position: absolute;
     background-color: v.$color-white;
     padding: 1.5rem 2.5rem;
-    box-shadow: 0 0 .3rem .3rem v.$color-box-shadow;
+    box-shadow: 0 0 .3rem .3rem v.$color-light-mode-box-shadow;
     border-radius: .5rem;
     width: 100%;
     top: 0;
@@ -123,4 +123,51 @@
 
 .region:nth-child(6){
     margin-bottom: 0;
+}
+
+#dark.main{
+    background-color: v.$color-very-dark-blue;
+}
+
+#dark .form{
+    background-color: v.$color-dark-blue;
+    box-shadow: 0 .7rem .6rem -0.4rem v.$color-dark-mode-box-shadow;
+}
+
+#dark .fa-magnifying-glass{
+    color: v.$color-white;
+}
+
+#dark .search-country{
+    background-color: v.$color-dark-blue;
+    color: v.$color-white;
+}
+
+#dark .search-country::placeholder{
+    color: v.$color-white;
+}
+
+#dark .region-filter{
+    background-color: v.$color-dark-blue;
+    box-shadow: 0 .7rem .6rem -0.4rem v.$color-dark-mode-box-shadow;
+}
+
+#dark .region-filter .theme-name{
+    color: v.$color-white;
+}
+
+#dark .fa-angle-down{
+    color: v.$color-white;
+}
+
+#dark .fa-angle-down{
+    color: v.$color-white;
+}
+
+#dark .regions{
+    background-color: v.$color-dark-blue;
+}
+
+#dark .region{
+    color: v.$color-white;
 }

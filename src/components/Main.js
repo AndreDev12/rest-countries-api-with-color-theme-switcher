@@ -1,12 +1,14 @@
-import { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { useContext, useState } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 import CountryList from './CountryList';
 import useAxios from '../hooks/useAxios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 const Main = () => {
   const [show, setShow] = useState(false);
   const {data, loading, handleChange, country, handleClick} = useAxios();
+  const {theme} = useContext(ThemeContext);
 
   const regions = [
     {label: "All", name: "all"},
@@ -18,7 +20,7 @@ const Main = () => {
   ];
 
   return (
-    <main className="main">
+    <main className="main" id={theme}>
       <div className="container">
         <div className="flex">
           <form className="form">

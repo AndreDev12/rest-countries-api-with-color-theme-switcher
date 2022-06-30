@@ -1,20 +1,13 @@
-import { createContext, useState } from 'react';
+import ThemeProvider from './context/ThemeContext';
 import Header from './components/Header';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Main from './components/Main';
 import CountryDetail from './components/CountryDetail';
-
-export const ThemeContext = createContext();
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
 function App() {
 
-  const [theme, setTheme] = useState("light");
-  const toggleTheme = () => {
-    setTheme( curr => curr === "light" ? "dark" : "light")
-  }
-
   return (
-    <ThemeContext.Provider value={{theme, toggleTheme}}>
+    <ThemeProvider>
       <Router>
         <Header />
         <Routes>
@@ -23,7 +16,7 @@ function App() {
             <Route path="*" element={<Navigate to="/countries" />} />
         </Routes>
       </Router>
-    </ThemeContext.Provider>
+    </ThemeProvider>
   );
 }
 

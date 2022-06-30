@@ -4,7 +4,7 @@
 .header{
     width: 100%;
     padding-block: 2.5rem;
-    box-shadow: 0 0 .3rem .3rem v.$color-box-shadow;
+    box-shadow: 0 0 .3rem .3rem v.$color-light-mode-box-shadow;
     height: 7rem;
     .flex{
         display: flex;
@@ -39,31 +39,36 @@
     }
 }
 
-#light.header{
-    background-color: v.$color-white;
-}
+// #light .header{
+//     background-color: v.$color-white;
+// }
 
 #dark.header{
     background-color: v.$color-dark-blue;
+    box-shadow: 0 .7rem .6rem -0.4rem v.$color-dark-mode-box-shadow;
 }
 
-#light .title{
-    color: v.$color-black-pearl;
-}
+// #light .title{
+//     color: v.$color-black-pearl;
+// }
 
 #dark .title{
     color: v.$color-white;
 }
 
-#light .theme-switcher{
-    background-color: v.$color-white;
-}
+// #light .theme-switcher{
+//     background-color: v.$color-white;
+// }
 
 #dark .theme-switcher{
     background-color: v.$color-dark-blue;
     color: v.$color-white;
 }
 
-#dark .moon{
-    background-color: v.$color-white; 
-}
+// #dark .fa-moon{
+//     color: v.$color-white;
+// }
+
+// #dark .theme-name{
+//     color: v.$color-white;
+// }
