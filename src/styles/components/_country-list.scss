@@ -1,4 +1,5 @@
 @use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
 
 .content-grid{
     display: grid;
@@ -18,9 +19,14 @@
 .content-block{
     display: block;
     margin-top: 4rem;
+    height: 100vh;
     .loading-countries{
         font-size: 2.5rem;
         font-weight: 800;
         text-align: center;
     }
+}
+
+#dark .loading-countries{
+    color: v.$color-white;
 }

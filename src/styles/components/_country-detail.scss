@@ -171,3 +171,31 @@
     font-size: 1.4rem;
     text-decoration: none;
 }
+
+#dark.main-country-detail{
+    background-color: v.$color-very-dark-blue;
+}
+
+#dark .return-home{
+    background-color: v.$color-dark-blue;
+    box-shadow: 0 .7rem .6rem -0.4rem v.$color-dark-mode-box-shadow;
+    color: v.$color-white;
+}
+
+#dark .details-country-name{
+    color: v.$color-white;
+}
+
+#dark .details-feature{
+    color: v.$color-white;
+}
+
+#dark .border-countries .span{
+    color: v.$color-white;
+}
+
+#dark .border{
+    background-color: v.$color-dark-blue;
+    color: v.$color-white;
+    box-shadow: 0 .7rem .6rem -0.4rem v.$color-dark-mode-box-shadow;
+}

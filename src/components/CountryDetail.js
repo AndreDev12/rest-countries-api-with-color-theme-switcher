@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 import useAxios from '../hooks/useAxios';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -7,13 +9,14 @@ const CountryDetail = () => {
   const navigate = useNavigate();
   const { countryId } = useParams();
   const { data } = useAxios();
+  const { theme } = useContext(ThemeContext);
 
   if(!data.length) return;
   let result = data.filter(country => country.name === countryId)[0];
   const { flags:{ png }, name, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borders } = result;
 
   return (
-    <main className="main-country-detail">
+    <main className="main-country-detail" id={theme}>
         <div className="container">
             <button 
               className="return-home"
