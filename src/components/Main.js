@@ -43,7 +43,7 @@ const Main = () => {
             <FontAwesomeIcon icon={faAngleDown} /> 
             {
               show && 
-              <div className="regions" data-visible={show}>
+              <div className="regions animate__animated animate__fadeIn" data-visible={show}>
                 <ul 
                   className="region-list"
                 >

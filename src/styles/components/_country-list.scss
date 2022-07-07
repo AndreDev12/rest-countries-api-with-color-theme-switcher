@@ -8,11 +8,13 @@
     margin-top: 4rem;
     padding-inline: 4.5rem;
     justify-content: center;
+    margin-bottom: 23.5rem;
     @include m.desktop{
         grid-template-columns: repeat(4, 1fr);
         column-gap: 6rem;
         padding-inline: 0;
         row-gap: 6rem;
+        margin-bottom: 39.9rem;
     }
 }
 
