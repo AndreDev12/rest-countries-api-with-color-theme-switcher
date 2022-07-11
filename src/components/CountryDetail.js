@@ -4,6 +4,7 @@ import useAxios from '../hooks/useAxios';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
+import 'animate.css';
 
 const CountryDetail = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const CountryDetail = () => {
 
   return (
     <main className="main-country-detail" id={theme}>
-        <div className="container">
+        <div className="container animate__animated animate__fadeIn">
             <button 
               className="return-home"
               onClick={() => navigate("/countries")}

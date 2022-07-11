@@ -4,6 +4,7 @@ import CountryList from './CountryList';
 import useAxios from '../hooks/useAxios';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import 'animate.css';
 
 const Main = () => {
   const [show, setShow] = useState(false);

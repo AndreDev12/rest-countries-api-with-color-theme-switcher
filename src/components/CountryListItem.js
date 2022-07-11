@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
+import 'animate.css';
 
 const CountryListItem = ({ country }) => {
   return (
     <Link 
         to={`/countries/${country.name}`}
-        className="home-country"
+        className="home-country animate__animated animate__fadeIn"
     >
         <button className="link">
             <img 
