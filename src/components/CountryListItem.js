@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import 'animate.css';
 
-const CountryListItem = ({ country }) => {
+const CountryListItem = ({country}) => {
   return (
     <Link 
         to={`/countries/${country.name}`}

@@ -1,5 +1,5 @@
-@use '../abstract/variables' as v;
 @use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
 
 .home-country{
     display: flex;
@@ -15,17 +15,17 @@
         .flag{
             border-radius: .6rem .6rem 0 0;
             display: block;
-            width: 100%;
             height: 100%;
+            width: 100%;
         }
     }
 }
 
 .information{
     background-color: v.$color-white;
-    padding: 3rem;
-    height: 18.5rem;
     border-radius: 0 0 0.6rem 0.6rem;
+    height: 18.5rem;
+    padding: 3rem;
     .home-country-name{
         color: v.$color-black-pearl;
         font-size: 1.8rem;
@@ -41,8 +41,8 @@
 }
 
 .home-feature{
-    font-size: 1.4rem;
     color: v.$color-black-pearl;
+    font-size: 1.4rem;
     font-weight: 600;
     margin-bottom: .5rem;
     @include m.desktop{

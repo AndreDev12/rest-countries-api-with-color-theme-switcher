@@ -1,7 +1,8 @@
+import PropTypes from 'prop-types';
 import CountryListItem from './CountryListItem';
 
 const CountryList = ({data, loading}) => {
-  // console.log(state);
+  
   return (
     <div className={loading ? "content-block" : "content-grid"}>
     {
@@ -15,6 +16,11 @@ const CountryList = ({data, loading}) => {
     }
     </div>
   )
+}
+
+CountryList.propTypes = {
+  data: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
 }
 
 export default CountryList;

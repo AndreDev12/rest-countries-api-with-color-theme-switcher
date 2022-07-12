@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import { ThemeContext } from '../context/ThemeContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon } from '@fortawesome/free-regular-svg-icons';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);

@@ -6,9 +6,8 @@ const useAxios = () => {
   const [state, setState] = useState({
     data: [],
     loading: false,
-    error: false
   });
-  const { data, loading, error } = state;
+  const { data, loading } = state;
   const [inputCountry, setInputCountry] = useState({
     country: ""
   });
@@ -30,7 +29,7 @@ const useAxios = () => {
           data
         })
       }catch(e){
-        console.error(e);
+        console.log(e);
       }
     }
     searchCountries();
@@ -50,7 +49,7 @@ const useAxios = () => {
           });
         }
       }catch(e){
-
+        // console.log(e);
       }
     }
     searchCountryName();
@@ -79,7 +78,7 @@ const useAxios = () => {
           });
         }
       }catch(e){
-        console.error(e);
+        console.log(e);
       }
     }
     searchRegion();
@@ -98,7 +97,6 @@ const useAxios = () => {
   return {
     data,
     loading,
-    error,
     country,
     handleChange,
     handleClick

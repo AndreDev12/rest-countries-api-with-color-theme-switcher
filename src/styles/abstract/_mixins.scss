@@ -1,17 +1,5 @@
 @use 'variables' as v;
 
-// @mixin mobile{
-//     @media screen and (min-width: v.$mq-mobile){
-//         @content;
-//     }
-// }
-
-// @mixin tablet{
-//     @media screen and (min-width: v.$mq-tablet){
-//         @content;
-//     }
-// }
-
 @mixin desktop{
     @media screen and (min-width: v.$mq-desktop){
         @content;

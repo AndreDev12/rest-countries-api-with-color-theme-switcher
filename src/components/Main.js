@@ -1,9 +1,9 @@
 import { useContext, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { ThemeContext } from '../context/ThemeContext';
 import CountryList from './CountryList';
 import useAxios from '../hooks/useAxios';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMagnifyingGlass, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import 'animate.css';
 
 const Main = () => {

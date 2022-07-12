@@ -1,15 +1,15 @@
-@use '../abstract/variables' as v;
 @use '../abstract/mixins' as m;
+@use '../abstract/variables' as v;
 
 .header{
-    width: 100%;
-    padding-block: 2.5rem;
     box-shadow: 0 0 .3rem .3rem v.$color-light-mode-box-shadow;
     height: 7rem;
+    padding-block: 2.5rem;
+    width: 100%;
     .flex{
+        align-items: center;
         display: flex;
         justify-content: space-between;
-        align-items: center;
         .title{
             color: v.$color-black-pearl;
             font-size: 1.4rem;
@@ -22,53 +22,33 @@
 }
 
 .theme-switcher{
-    border: 0;
-    background-color: v.$color-white;
-    display: flex;
-    column-gap: .5rem;
     align-items: center;
-    font-size: 1.4rem;
+    background-color: v.$color-white;
+    border: 0;
     color: v.$color-black-pearl;
+    column-gap: .5rem;
+    display: flex;
+    font-size: 1.4rem;
     @include m.desktop{
-        font-size: 1.5rem;
         cursor: pointer;
+        font-size: 1.5rem;
     }
     .theme-name{
-        text-transform: capitalize;
         font-weight: 600;
+        text-transform: capitalize;
     }
 }
-
-// #light .header{
-//     background-color: v.$color-white;
-// }
 
 #dark.header{
     background-color: v.$color-dark-blue;
     box-shadow: 0 .7rem .6rem -0.4rem v.$color-dark-mode-box-shadow;
 }
 
-// #light .title{
-//     color: v.$color-black-pearl;
-// }
-
 #dark .title{
     color: v.$color-white;
 }
-
-// #light .theme-switcher{
-//     background-color: v.$color-white;
-// }
 
 #dark .theme-switcher{
     background-color: v.$color-dark-blue;
     color: v.$color-white;
 }
-
-// #dark .fa-moon{
-//     color: v.$color-white;
-// }
-
-// #dark .theme-name{
-//     color: v.$color-white;
-// }
