@@ -34,7 +34,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/AndreDev12/rest-countries-api-with-color-theme-switcher)
-- Live Site URL: [Vercel]()
+- Live Site URL: [Vercel](https://rest-countries-api-with-color-theme-switcher-seven-theta.vercel.app/countries)
 
 ## My process
 
