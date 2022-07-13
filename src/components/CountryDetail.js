@@ -1,9 +1,10 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
-import { ThemeContext } from '../context/ThemeContext';
+import axios from 'axios';
 import useAxios from '../hooks/useAxios';
+import { ThemeContext } from '../context/ThemeContext';
 import 'animate.css';
 
 const CountryDetail = () => {
@@ -12,9 +13,24 @@ const CountryDetail = () => {
   const { data } = useAxios();
   const { theme } = useContext(ThemeContext);
 
+  const [countries, setCountries] = useState([]);
+
+  useEffect(() => {
+    const searchCountriesByAlphaCodes = async() => {
+      if(data.length > 0){
+        let {borders} = data?.filter(country => country.name === countryId)[0];
+        if(!borders) return;
+        const url = `https://restcountries.com/v2/alpha?codes=${borders?.join(',')}`;
+        const response = await axios.get(url);
+        setCountries(response.data);
+      }
+    }
+    searchCountriesByAlphaCodes();
+  }, [data, countryId])
+
   if(!data.length) return;
   let result = data.filter(country => country.name === countryId)[0];
-  const { flags:{ png }, name, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borders } = result;
+  const { flags: {png}, name, nativeName, population, region, subregion, capital, topLevelDomain, currencies, languages, borders } = result;
 
   return (
     <main className="main-country-detail" id={theme}>
@@ -54,12 +70,12 @@ const CountryDetail = () => {
                       <span className="span">border countries:</span>
                       <div className="borders">
                         { 
-                          borders?.map((border) => (
+                          countries?.map((country) => (
                             <Link 
                               className="border"
-                              key={border}
-                              to={`/countries`}
-                            >{border}</Link>
+                              key={country.name}
+                              to={`/countries/${country.name}`}
+                            >{country.alpha3Code}</Link>
                           ))
                         }
                       </div>
